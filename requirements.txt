@@ -2,5 +2,5 @@ streamlit==0.84.0
 PyPDF2==1.26.0
 transformers==4.9.2
 
-http://download.pytorch.org/whl/cpu/torch-0.4.1-cp36-cp36m-linux_x86_64.whl
-python == 3.6
+https://s3.amazonaws.com/pytorch/whl/cu75/torch-0.1.6.post22-cp27-none-linux_x86_64.whl 
+torchvision
