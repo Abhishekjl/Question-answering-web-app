@@ -7,12 +7,6 @@ from os.path import isfile, join
 
 
 
-import transformers
-from transformers import AutoModelForQuestionAnswering, AutoTokenizer, pipeline
-model_name = "distilbert-base-uncased-distilled-squad"
-model = AutoModelForQuestionAnswering.from_pretrained(model_name)
-tokenizer = AutoTokenizer.from_pretrained(model_name)
-nlp = pipeline('question-answering', model=model_name, tokenizer=model_name)
 
 
 def save_uploaded_file(uploadedfile):
@@ -72,6 +66,12 @@ if task == 'Question Answering':
     'question': question,
     'context': document
 }
-
-    res = nlp(QA_input)
-    st.write(f"Answer: {res['answer']}")
+    
+  import transformers
+  from transformers import AutoModelForQuestionAnswering, AutoTokenizer, pipeline
+  model_name = "distilbert-base-uncased-distilled-squad"
+  model = AutoModelForQuestionAnswering.from_pretrained(model_name)
+  tokenizer = AutoTokenizer.from_pretrained(model_name)
+  nlp = pipeline('question-answering', model=model_name, tokenizer=model_name)
+  res = nlp(QA_input)
+  st.write(f"Answer: {res['answer']}")
